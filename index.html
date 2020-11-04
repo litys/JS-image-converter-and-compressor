@@ -18,21 +18,21 @@
             <div class="actions">
                 <div>
                     <div id="quality_div" class="action_row hidden">
-                        <label for="quality">Jakość: <span id="quality_value">0.7</span> </label>
+                        <label for="quality">Quality: <span id="quality_value">0.7</span> </label>
                         <input type="range" min="0" max="100" value="70" id="quality" oninput="change_quality()">
                     </div>
                     <div id="scale_div" class="action_row hidden">
-                        <label for="scale">Rozmiar: <span id="scale_value">1</span> </label>
+                        <label for="scale">Size: <span id="scale_value">1</span> </label>
                         <input type="range" min="0" max="100" value="100" id="scale" oninput="change_size()">
                     </div>
                 </div>
                 <div class="actions_btns">
                     <div class="action_row">
                         <input class="hidden" type="file" id="input" onchange="convert()" accept="image/*"/>
-                        <label for="input" class="input_file_btn">Wybierz plik</label>
+                        <label for="input" class="input_file_btn">Select file</label>
                     </div>
                     <div id="link_div" class="link hidden">
-                        <a download href="" id="link">Pobierz</a>
+                        <a download href="" id="link">Download</a>
                     </div>
                 </div>
             </div>
