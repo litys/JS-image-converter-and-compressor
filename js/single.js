@@ -22,7 +22,7 @@ function convert(){ // Prepare uploaded file
         // Fill background in white (prepare for alpha channel)
         ctx.fillStyle = "#FFF";
         ctx.fillRect(0,0,img.width,img.height);
-        // Draw image (file->canvas)
+
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
         img_width = img.width;
@@ -33,7 +33,7 @@ function convert(){ // Prepare uploaded file
     }
 }
 
-function change_quality(){
+function change_quality(){ // Draw image
     var quality = document.getElementById('quality').value;
     quality = parseInt(quality) / 100;
     document.getElementById('quality_value').innerHTML = quality.toFixed(2);
@@ -44,7 +44,7 @@ function change_quality(){
     document.getElementById('link').href = image;
 }
 
-function change_size() {
+function change_size() { // Resize image
     var ctx = document.getElementById('canvas').getContext('2d');
 
     var scale = document.getElementById('scale').value / 100;
@@ -58,8 +58,8 @@ function change_size() {
     // Fill background in white (prepare for alpha channel)
     ctx.fillStyle = "#FFF";
     ctx.fillRect(0,0, new_width, new_height);
-    // Draw image (file->canvas)
+
     ctx.drawImage(img, 0, 0, new_width, new_height);
     
-    change_quality();
+    change_quality(); // After resize redraw image
 }
