@@ -2,13 +2,13 @@ var img,
     img_width,
     img_height;
 
-function prepare(){
+function prepare(){ // Show options after firsth load
     document.getElementById('quality_div').className = 'action_row';
     document.getElementById('scale_div').className = 'action_row';
     document.getElementById('link_div').className = 'link';
 }
 
-function convert(){
+function convert(){ // Prepare uploaded file
 
     var input = document.getElementById('input');
 
@@ -16,8 +16,13 @@ function convert(){
     img = new Image;
     img.src = URL.createObjectURL(input.files[0]);
     img.onload = function() {
+        
         document.getElementById('canvas').width = img.width;
         document.getElementById('canvas').height = img.height;
+        // Fill background in white (prepare for alpha channel)
+        ctx.fillStyle = "#FFF";
+        ctx.fillRect(0,0,img.width,img.height);
+        // Draw image (file->canvas)
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
         img_width = img.width;
