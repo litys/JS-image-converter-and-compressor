@@ -55,6 +55,10 @@ function change_size() {
 
     document.getElementById('canvas').width = new_width;
     document.getElementById('canvas').height = new_height;
+    // Fill background in white (prepare for alpha channel)
+    ctx.fillStyle = "#FFF";
+    ctx.fillRect(0,0, new_width, new_height);
+    // Draw image (file->canvas)
     ctx.drawImage(img, 0, 0, new_width, new_height);
     
     change_quality();
