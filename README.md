@@ -3,3 +3,5 @@ Useful image converter to JPEG and compressor. Can open lots of popular image ex
 
 ## Safe
 All operations on images are done on browser side. In result all images are safe on your device.
+
+![preview](screenshot.jpg)
